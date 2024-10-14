@@ -1,0 +1,137 @@
+Functions
+```c
+// Add a function to watch a particular hint.
+// name - the hint to watch.
+// callback - An SDL_HintCallback function that will be called when the hint value changes.
+// *userdata - a pointer to pass to the callback function.
+void SDL_AddHintCallback(const char *name, SDL_HintCallback callback, void *userdata);
+
+// Clear all hints.
+void SDL_ClearHints(void);
+
+// Remove a function watching a particular hint.
+// name - the hint to watch.
+// callback - An SDL_HintCallback function that will be called when the hint value changes.
+// *userdata - a pointer to pass to the callback function.
+void SDL_DelHintCallback(const char *name, SDL_HintCallback callback, void *userdata);
+
+// Get the value of a hint.
+// name - the hint to query.
+// Return - string value of a hint or NULL if the hint isn't set.
+const char * SDL_GetHint(const char *name);
+
+// Get the boolean value of a hint variable.
+// name - the name of the hint to get the boolean value from.
+// default_value - the value to return if the hint does not exist.
+// Return - boolean value of a hint or the provided default value if the hint does not exist.
+SDL_bool SDL_GetHintBoolean(const char *name, SDL_bool default_value);
+
+// Reset a hint to the default value.
+// name - the hint to reset.
+// Return - SDL_TRUE if the hint was set, SDL_FALSE otherwise.
+SDL_bool SDL_ResetHint(const char *name);
+
+// Reset all hints to the default values.
+void SDL_ResetHints(void);
+
+// Set a hint with normal priority.
+// name - the hint to set.
+// value - the value of the hint variable.
+// Return - SDL_TRUE if the hint was set, SDL_FALSE otherwise.
+SDL_bool SDL_SetHint(const char *name, const char *value);
+
+// Set a hint with a specific priority.
+// name - the hint to set.
+// value - the value of the hint variable.
+// priority - the SDL_HintPriority level for the hint.
+// Return - SDL_TRUE if the hint was set, SDL_FALSE otherwise.
+SDL_bool SDL_SetHintWithPriority(const char *name, const char *value, SDL_HintPriority priority);
+```
+
+Datatypes
+```c
+// Type definition of the hint callback function.
+// userdata - what was passed as userdata to SDL_AddHintCallback().
+// name - what was passed as name to SDL_AddHintCallback().
+// oldValue - the previous hint value.
+// newValue - the new value hint is to be set to.
+typedef void (SDLCALL *SDL_HintCallback)(void *userdata, const char *name, const char *oldValue, const char *newValue);
+```
+
+Enums
+```c
+// An enumeration of hint priorities
+typedef enum SDL_HintPriority
+{
+    SDL_HINT_DEFAULT,
+    SDL_HINT_NORMAL,
+    SDL_HINT_OVERRIDE
+} SDL_HintPriority;
+```
+
+Macros
+```c
+// A variable controlling whether the Android / iOS built-in accelerometer should be listed as a joystick device.
+// Default: True, The accelerometer is available as a 3 axis joystick
+#define SDL_HINT_ACCELEROMETER_AS_JOYSTICK "SDL_ACCELEROMETER_AS_JOYSTICK"
+
+// Specify the behavior of Alt+Tab while the keyboard is grabbed.
+// Default: SDL will minimize your window when Alt+Tab is pressed
+#define SDL_HINT_ALLOW_ALT_TAB_WHILE_GRABBED "SDL_ALLOW_ALT_TAB_WHILE_GRABBED"
+
+// If set to "0" then never set the top most bit on a SDL Window, even if the video mode expects it.
+// Default: allow topmost
+#define SDL_HINT_ALLOW_TOPMOST "SDL_ALLOW_TOPMOST"
+
+// Android APK expansion main file version.
+// Default: this hint is not set and the APK expansion files are not searched.
+#define SDL_HINT_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION "SDL_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION"
+
+// Android APK expansion patch file version.
+// Default: this hint is not set and the APK expansion files are not searched.
+#define SDL_HINT_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION "SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION"
+
+// A variable to control whether the event loop will block itself when the app is paused.
+// Default: Blocking
+#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE "SDL_ANDROID_BLOCK_ON_PAUSE"
+
+// A variable to control whether SDL will pause audio in background (Requires SDL_ANDROID_BLOCK_ON_PAUSE as "Non blocking")
+// Default: Paused
+#define SDL_HINT_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO "SDL_ANDROID_BLOCK_ON_PAUSE_PAUSEAUDIO"
+
+// A variable to control whether we trap the Android back button to handle it manually.
+// Default: Back button will be handled as usual for system.
+#define SDL_HINT_ANDROID_TRAP_BACK_BUTTON "SDL_ANDROID_TRAP_BACK_BUTTON"
+
+// Specify an application name.
+// Default: probably the application's name or "SDL Application" if SDL doesn't have any better information.
+#define SDL_HINT_APP_NAME "SDL_APP_NAME"
+
+// Specify if SDL_RWFromFile should use the resource dir on Apple platforms.
+// Default: SDL will use the app's resource directory
+#define SDL_HINT_APPLE_RWFROMFILE_USE_RESOURCES "SDL_APPLE_RWFROMFILE_USE_RESOURCES"
+
+// A variable controlling whether controllers used with the Apple TV generate UI events.
+// Default: Controller input does not generate UI events
+#define SDL_HINT_APPLE_TV_CONTROLLER_UI_EVENTS "SDL_APPLE_TV_CONTROLLER_UI_EVENTS"
+
+// A variable controlling whether the Apple TV remote's joystick axes will automatically match the rotation of the remote.
+// Default: Remote orientation does not affect joystick axes
+#define SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
