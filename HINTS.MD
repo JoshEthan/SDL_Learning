@@ -119,15 +119,53 @@ Macros
 // Default: Remote orientation does not affect joystick axes
 #define SDL_HINT_APPLE_TV_REMOTE_ALLOW_ROTATION "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION"
 
+// A variable controlling the audio category on iOS and Mac OS X
+// Default: "ambient": Use the AVAudioSessionCategoryAmbient audio category, will be muted by the phone mute switch
+#define SDL_HINT_AUDIO_CATEGORY "SDL_AUDIO_CATEGORY"
 
+// Specify an application name for an audio device.
+// Default: this will be the name set with SDL_HINT_APP_NAME, if that hint is set. Otherwise, it'll probably the application's name or "SDL Application" if SDL doesn't have any better information.
+#define SDL_HINT_AUDIO_DEVICE_APP_NAME "SDL_AUDIO_DEVICE_APP_NAME"
 
+// Specify an application name for an audio device.
+// Default: "audio stream" or something similar.
+#define SDL_HINT_AUDIO_DEVICE_STREAM_NAME "SDL_AUDIO_DEVICE_STREAM_NAME"
 
+// Specify an application role for an audio device.
+// Default: "Game" or something similar.
+#define SDL_HINT_AUDIO_DEVICE_STREAM_ROLE "SDL_AUDIO_DEVICE_STREAM_ROLE"
 
+// A variable that causes SDL to not ignore audio "monitors"
+// Default: "0", SDL ignores audio devices that aren't associated with physical hardware.
+#define SDL_HINT_AUDIO_INCLUDE_MONITORS "SDL_AUDIO_INCLUDE_MONITORS"
 
+// A variable controlling speed/quality tradeoff of audio resampling.
+// Default: "0" or "default": Use SDL's internal resampling (Default when not set - low quality, fast)
+#define SDL_HINT_AUDIO_RESAMPLING_MODE "SDL_AUDIO_RESAMPLING_MODE"
 
+// A variable that decides what audio backend to use.
+// Default: unset, SDL will try all available audio backends in a reasonable order until it finds one that can work
+#define SDL_HINT_AUDIODRIVER "SDL_AUDIODRIVER"
 
+// A variable controlling whether SDL updates joystick state when getting input events
+// "1": SDL will automatically call SDL_JoystickUpdate()
+#define SDL_HINT_AUTO_UPDATE_JOYSTICKS  "SDL_AUTO_UPDATE_JOYSTICKS"
 
+// A variable controlling whether SDL updates sensor state when getting input events
+// "1": SDL will automatically call SDL_SensorUpdate()
+#define SDL_HINT_AUTO_UPDATE_SENSORS "SDL_AUTO_UPDATE_SENSORS"
 
+// Prevent SDL from using version 4 of the bitmap header when saving BMPs.
+// Default: "0": Surfaces with a colorkey or an alpha channel are saved to a 32-bit BMP file with an alpha mask. SDL will use the bitmap header version 4 and set the alpha mask accordingly.
+#define SDL_HINT_BMP_SAVE_LEGACY_FORMAT "SDL_BMP_SAVE_LEGACY_FORMAT"
+
+// A variable that lets you disable the detection and use of DirectInput gamepad devices
+// Default: "1": Enable DirectInput detection
+#define SDL_HINT_DIRECTINPUT_ENABLED "SDL_DIRECTINPUT_ENABLED"
+
+// Override for SDL_GetDisplayUsableBounds()
+// Default: ??? (unset)
+#define SDL_HINT_DISPLAY_USABLE_BOUNDS "SDL_DISPLAY_USABLE_BOUNDS"
 
 
 
