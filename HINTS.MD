@@ -167,9 +167,87 @@ Macros
 // Default: ??? (unset)
 #define SDL_HINT_DISPLAY_USABLE_BOUNDS "SDL_DISPLAY_USABLE_BOUNDS"
 
+// Disable giving back control to the browser automatically when running with asyncify
+// Default: "1": Enable emscripten_sleep calls
+#define SDL_HINT_EMSCRIPTEN_ASYNCIFY   "SDL_EMSCRIPTEN_ASYNCIFY"
+
+// Override the binding element for keyboard inputs for Emscripten builds
+// Default: "#window": the javascript window object
+#define SDL_HINT_EMSCRIPTEN_KEYBOARD_ELEMENT "SDL_EMSCRIPTEN_KEYBOARD_ELEMENT"
+
+// A variable that controls whether the on-screen keyboard should be shown when text input is active
+// Default: "1": Show the on-screen keyboard
+#define SDL_HINT_ENABLE_SCREEN_KEYBOARD "SDL_ENABLE_SCREEN_KEYBOARD"
+
+// A variable that controls whether Steam Controllers should be exposed using the SDL joystick and game controller APIs
+// "1": Scan for Steam Controllers
+#define SDL_HINT_ENABLE_STEAM_CONTROLLERS "SDL_ENABLE_STEAM_CONTROLLERS"
+
+// A variable controlling verbosity of the logging of SDL events pushed onto the internal queue.
+// "0": Don't log any events
+#define SDL_HINT_EVENT_LOGGING   "SDL_EVENT_LOGGING"
+
+// A variable controlling whether raising the window should be done more forcefully
+// "0": No forcing
+#define SDL_HINT_FORCE_RAISEWINDOW "SDL_HINT_FORCE_RAISEWINDOW"
+
+// A variable controlling how 3D acceleration is used to accelerate the SDL screen surface.
+// Default: SDL tries to make a best guess for each platform whether to use acceleration or not.
+#define SDL_HINT_FRAMEBUFFER_ACCELERATION "SDL_FRAMEBUFFER_ACCELERATION"
+
+// A variable containing a list of devices to skip when scanning for game controllers.
+// Default: ???
+#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES "SDL_GAMECONTROLLER_IGNORE_DEVICES"
+
+// If set, all devices will be skipped when scanning for game controllers except for the ones listed in this variable.
+// Default: ???
+#define SDL_HINT_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT "SDL_GAMECONTROLLER_IGNORE_DEVICES_EXCEPT"
 
 
+// If set, game controller face buttons report their values according to their labels instead of their positional layout.
+// Default: "1": Report the face buttons by label instead of position
+#define SDL_HINT_GAMECONTROLLER_USE_BUTTON_LABELS "SDL_GAMECONTROLLER_USE_BUTTON_LABELS"
 
+// A variable that lets you manually hint extra gamecontroller db entries.
+// ???
+#define SDL_HINT_GAMECONTROLLERCONFIG "SDL_GAMECONTROLLERCONFIG"
+
+// A variable that lets you provide a file with extra gamecontroller db entries.
+// ??
+#define SDL_HINT_GAMECONTROLLERCONFIG_FILE "SDL_GAMECONTROLLERCONFIG_FILE"
+
+// A variable that overrides the automatic controller type detection
+// ???
+#define SDL_HINT_GAMECONTROLLERTYPE "SDL_GAMECONTROLLERTYPE"
+
+// A variable controlling whether grabbing input grabs the keyboard
+// SDL will not grab the keyboard so system shortcuts still work.
+#define SDL_HINT_GRAB_KEYBOARD "SDL_GRAB_KEYBOARD"
+
+// A variable containing a list of devices to ignore in SDL_hid_enumerate()
+// ???
+#define SDL_HINT_HIDAPI_IGNORE_DEVICES "SDL_HIDAPI_IGNORE_DEVICES"
+
+// A variable controlling whether the idle timer is disabled on iOS.
+// ???
+#define SDL_HINT_IDLE_TIMER_DISABLED "SDL_IOS_IDLE_TIMER_DISABLED"
+
+// A variable to control whether certain IMEs should handle text editing internally instead of sending SDL_TEXTEDITING events.
+// "0": SDL_TEXTEDITING events are sent, and it is the application's responsibility to render the text from these events and differentiate it somehow from committed text.
+#define SDL_HINT_IME_INTERNAL_EDITING "SDL_IME_INTERNAL_EDITING"
+
+// A variable to control whether certain IMEs should show native UI components (such as the Candidate List) instead of suppressing them.
+// "0": Native UI components are not display
+#define SDL_HINT_IME_SHOW_UI "SDL_IME_SHOW_UI"
+
+// A variable to control if extended IME text support is enabled.
+// "0": Legacy behavior. Text can be truncated, no heap allocations. 
+#define SDL_HINT_IME_SUPPORT_EXTENDED_TEXT "SDL_IME_SUPPORT_EXTENDED_TEXT"
+
+// A variable controlling whether the home indicator bar on iPhone X should be hidden.
+// "0": The indicator bar is not hidden (default for windowed applications)
+// "2": The indicator bar is dim and the first swipe makes it visible and the second swipe performs the "home" action (default for fullscreen applications)
+#define SDL_HINT_IOS_HIDE_HOME_INDICATOR "SDL_IOS_HIDE_HOME_INDICATOR"
 
 
 ```
